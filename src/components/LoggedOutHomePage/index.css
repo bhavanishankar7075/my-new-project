@@ -1,0 +1,200 @@
+/* src/components/LoggedOutHomePage.css */
+.loggedout-homepage {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+.loggedout-navbar {
+  background-color: cornflowerblue;
+  padding: 10px 20px;
+}
+
+.loggedout-navbar .navbar-brand {
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.loggedout-navbar .navbar-actions button {
+  color: #fff;
+  border-color: #fff;
+}
+
+.homepage-carousel img {
+  max-height: 400px;
+  object-fit: cover;
+  width: 100%;
+}
+
+.auth-card {
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.toggle-btn {
+  font-weight: bold;
+}
+
+
+
+
+
+
+
+/* ModalStyles.css */
+
+/* Ensure the modal is centered and responsive */
+.custom-auth-modal .modal-dialog {
+  margin: 5.9rem auto;
+  max-width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (min-width: 576px) {
+  .custom-auth-modal .modal-dialog {
+    max-width: 500px;
+  }
+}
+
+/* Modal content styling with animation */
+.custom-auth-modal .modal-content {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  animation: modalFadeIn 0.5s ease-out;
+}
+
+/* Animation for modal appearance */
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Header styling */
+.custom-auth-modal-header {
+  background-color: #223f5d;
+  color: #fff;
+  padding: 1rem 1.5rem;
+  border-bottom: none;
+}
+.custom-auth-modal-header .modal-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Body styling */
+.custom-auth-modal-body {
+  padding: 1.5rem;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Optional: Footer styling if needed */
+.custom-auth-modal .modal-footer {
+  padding: 0.75rem 1.5rem;
+  border-top: none;
+  background-color: #f7f7f7;
+}
+
+
+
+
+@media (max-width: 576px) {
+  .loggedout-navbar .navbar-brand {
+    display: block !important;
+    font-size: 1.8rem;
+    color: #fff;
+    animation: fadeInDown 1s ease;
+  }
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Global fade-in for the entire logged-out homepage */
+.loggedout-homepage {
+  animation: fadeIn 1s ease both;
+}
+
+/* Navbar logo: ensure it’s visible on small screens and animates from above */
+@media (max-width: 576px) {
+  .loggedout-navbar .navbar-brand {
+    display: block !important;
+    font-size: 1.8rem;
+    color: #fff;
+    animation: fadeInDown 1s ease both;
+  }
+}
+
+/* Carousel images: apply a zoom-in effect */
+.homepage-carousel img {
+  animation: zoomIn 1s ease both;
+}
+
+/* Additional content section (e.g. welcome message & Shop Now button)
+   Wrap that content in a container with class "content-section" in your JSX */
+.content-section {
+  animation: fadeInUp 1s ease both;
+}
+
+/* Keyframes for animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

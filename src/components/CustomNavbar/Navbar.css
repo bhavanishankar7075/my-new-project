@@ -1,0 +1,459 @@
+/* -------------------------------
+   Base Navbar Styles (Large/Extra-Large View by Default)
+---------------------------------*/
+.custom-navbar {
+  background-color: cornflowerblue;
+  padding: 10px 20px;
+  box-shadow: 0 2px 4px rgba(199,16,16,0.1);
+  animation: slideDown 0.5s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Flex container for horizontal layout */
+.navbar-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+/* Logo */
+.navbar-brand {
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-brand:hover {
+  opacity: 0.8;
+}
+
+/* Navigation Links */
+.nav-links {
+  color: #fff !important;
+  font-size: 15px;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+  white-space: nowrap;
+  margin: 0 10px;
+}
+
+.nav-links:hover {
+  color: #d9e3e1;
+  transform: translateY(-2px);
+}
+
+/* Auth Button (Logout/Sign Up) */
+.auth-btn {
+  border: 2px solid #9fd6cb;
+  color: #ecf0f1;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  padding: 5px 10px;
+  white-space: nowrap;
+  margin-left: 10px;
+  display: flex;         /* Added for flex alignment */
+  align-items: center;
+ 
+}
+.logout-icon {
+  margin-right: 5px;
+  font-size: 1.2rem; /* Adjust size as needed */
+  vertical-align: middle;
+  transition: transform 0.3s ease;
+}
+
+.auth-btn:hover .logout-icon {
+  transform: scale(1.1);
+}
+
+/* Cart Badge */
+.cart-badge {
+  background-color: rgb(12,120,236);
+  color: #fff;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 0.8rem;
+  margin-left: 5px;
+}
+
+/* Additional elements for large screens (e.g. search form, username) */
+.search-form {
+  max-width: 400px;
+  width: 100%;
+  margin-right: 15px;
+}
+
+.search-form .form-control {
+  border: 1px solid #ddd;
+  border-radius: 25px;
+  padding: 10px 20px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-form .form-control:focus {
+  border-color: #2e45dd;
+  box-shadow: 0 0 8px rgba(46,69,221,0.4);
+  outline: none;
+}
+
+.nav-username {
+  color: #e20e75;
+  font-weight: 500;
+  margin-right: 15px;
+  white-space: nowrap;
+}
+
+/* Full Navigation Container */
+.full-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+
+
+
+/* -------------------------------
+   RESPONSIVE ADJUSTMENTS
+---------------------------------*/
+
+/* SMALL DEVICES (max-width: 576px)
+   - Hide: logo, search form, username.
+   - Show only nav links (Home, Products, Cart, Logout) arranged in a horizontal row.
+*/
+/* @media (max-width: 576px) {
+  .navbar-brand,
+  .search-form,
+  .nav-username {
+    display: none !important;
+  }
+  .full-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+  }
+  .nav-links {
+    font-size: 20px;
+    margin: 0 18px; 
+  }
+
+} */
+
+
+
+
+
+
+@media (max-width: 576px) {
+  .navbar-brand,
+  .search-form,
+  .nav-username {
+    display: none !important;
+  }
+  
+  .full-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    /* Fade in animation for the container */
+    animation: fadeIn 0.6s ease-out;
+  }
+  
+  .nav-links {
+    font-size: 20px;
+    margin: 0 18px; 
+    transition: transform 0.3s ease, color 0.3s ease;
+    /* Each nav link fades in and moves upward slightly */
+    animation: fadeInUp 0.6s ease;
+  }
+  
+  .nav-links:hover {
+    transform: scale(1.1);
+    color: #1cd5b0;
+  }
+}
+
+/* Keyframes for fadeIn animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Keyframes for fadeInUp animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* MEDIUM DEVICES (577px to 991px)
+   - Show: Logo on the left, nav links on the right.
+   - Hide: search form, username.
+*/
+@media (min-width: 577px) and (max-width: 991px) {
+  .navbar-brand {
+    display: flex;
+  }
+  .search-form,
+  .nav-username {
+    display: none !important;
+  }
+  .full-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+  }
+  .nav-links {
+    font-size: 15px;
+    margin: 0 10px;
+  }
+}
+
+/* LARGE & EXTRA-LARGE DEVICES (min-width: 992px)
+   - Show: Logo, search form, nav links.
+*/
+/* @media (min-width: 992px) {
+  .navbar-brand,
+  .search-form,
+  .full-nav {
+    display: flex;
+  }
+  .full-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 15px;
+  }
+} */
+
+
+
+@media (min-width: 992px) {
+  /* Show logo, search form, and navigation links in a horizontal row */
+  .navbar-brand,
+  .search-form,
+  .full-nav {
+    display: flex;
+  }
+  
+  .navbar-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+  }
+  
+  .full-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 15px;
+  }
+}
+
+
+/* -------------------------------
+   Modal & Form Styles (unchanged)
+---------------------------------*/
+.modal-content {
+  border-radius: 10px;
+  border: none;
+  animation: zoomIn 0.3s ease;
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.modal-header {
+  background-color: #223f5d;
+  color: #ecf0f1;
+  border-bottom: none;
+  border-radius: 10px 10px 0 0;
+}
+
+.modal-title {
+  font-weight: 600;
+}
+
+.modal-body {
+  padding: 20px;
+}
+
+.form-label {
+  font-weight: 500;
+  color: #2c3e50;
+}
+
+.form-control {
+  border: 1px solid #bdc3c7;
+  border-radius: 5px;
+  padding: 10px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #1abc9c;
+  box-shadow: 0 0 8px rgba(26,188,156,0.5);
+}
+
+
+
+
+
+
+/* Global Animation Classes */
+
+/* Fade In */
+.fade-in {
+  animation: fadeIn 1s ease both;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Slide In From Left */
+.slide-in-left {
+  animation: slideInLeft 1s ease both;
+}
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Slide In From Right */
+.slide-in-right {
+  animation: slideInRight 1s ease both;
+}
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Zoom In */
+.zoom-in {
+  animation: zoomIn 0.8s ease both;
+}
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Rotate In */
+.rotate-in {
+  animation: rotateIn 1s ease both;
+}
+@keyframes rotateIn {
+  from {
+    opacity: 0;
+    transform: rotate(-360deg);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(0deg);
+  }
+}
+
+/* Bounce In */
+.bounce-in {
+  animation: bounceIn 1s ease both;
+}
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Example: Navbar Logo Animation on small screens (using fadeInDown) */
+@media (max-width: 576px) {
+  .loggedout-navbar .navbar-brand {
+    animation: fadeInDown 1s ease both;
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

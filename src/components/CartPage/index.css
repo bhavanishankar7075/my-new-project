@@ -1,0 +1,327 @@
+/* Global Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: #f4f6f8;
+  color: #333;
+}
+
+/* Cart Page Container */
+.cart-page {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+
+
+/* Clear Cart Button Styles */
+/* Cart Heading with Clear Button */
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.cart-heading {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Clear Cart Button Styles */
+.clear-cart-button {
+  background-color: #dc3545; /* Bootstrap Danger Red */
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.clear-cart-button:hover {
+  background-color: #b02a37; /* Darker Red on Hover */
+  transform: translateY(-3px);
+}
+
+.clear-cart-button:active {
+  background-color: #920b1b;
+  transform: translateY(1px);
+}
+
+/* Responsive Design */
+@media (max-width: 576px) {
+  .cart-heading {
+    font-size: 2rem;
+  }
+
+  .clear-cart-button {
+    padding: 10px 16px;
+    font-size: 0.9rem;
+  }
+}
+
+
+
+
+/* Cart Heading */
+
+
+/* Cart Items Grid */
+.cart-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+/* Individual Cart Item */
+.cart-item {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+  padding: 20px;
+  transition: transform 0.3s ease;
+}
+
+.cart-item:hover {
+  transform: translateY(-5px);
+}
+
+/* Image Styling */
+.cart-item-img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover; /* Ensures all images have the same size and aspect ratio */
+  border-radius: 10px;
+  margin-bottom: 15px;
+  background-color: #eee;
+}
+
+/* Cart Item Details */
+.cart-item-details h3 {
+  font-size: 1.2rem;
+  margin: 10px 0;
+}
+
+.cart-item-details p {
+  margin: 5px 0;
+  color: #555;
+}
+
+/* Price Display */
+.cart-item-price {
+  color: #28a745;
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin: 10px 0;
+}
+
+/* Remove Button */
+.remove-button {
+  margin-top: 10px;
+  padding: 8px 15px;
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.remove-button:hover {
+  background-color: #c82333;
+}
+
+/* Cart Summary Section */
+.summary-card {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  margin-top: 30px;
+  padding: 20px;
+  text-align: right;
+}
+
+.summary-card h4 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.summary-card .total-amount {
+  font-size: 1.4rem;
+  color: #007bff;
+  margin-bottom: 20px;
+}
+
+/* Checkout Button */
+.checkout-button {
+  padding: 12px 20px;
+  font-size: 1.1rem;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.checkout-button:hover {
+  background-color: #0056b3;
+}
+
+/* Empty Cart Image */
+.empty-cart-image {
+  display: block;
+  margin: 20px auto;
+  width: 250px;
+  height: auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .cart-items {
+    grid-template-columns: 1fr;
+  }
+
+  .cart-heading {
+    font-size: 2rem;
+  }
+
+  .cart-item-img {
+    height: 140px;
+  }
+
+  .summary-card {
+    text-align: center;
+  }
+}
+
+
+
+
+
+
+
+
+/* Global Animation Classes */
+
+/* Fade In */
+.fade-in {
+  animation: fadeIn 1s ease both;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Slide In From Left */
+.slide-in-left {
+  animation: slideInLeft 1s ease both;
+}
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Slide In From Right */
+.slide-in-right {
+  animation: slideInRight 1s ease both;
+}
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Zoom In */
+.zoom-in {
+  animation: zoomIn 0.8s ease both;
+}
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Rotate In */
+.rotate-in {
+  animation: rotateIn 1s ease both;
+}
+@keyframes rotateIn {
+  from {
+    opacity: 0;
+    transform: rotate(-360deg);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(0deg);
+  }
+}
+
+/* Bounce In */
+.bounce-in {
+  animation: bounceIn 1s ease both;
+}
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Example: Navbar Logo Animation on small screens (using fadeInDown) */
+@media (max-width: 576px) {
+  .loggedout-navbar .navbar-brand {
+    animation: fadeInDown 1s ease both;
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+

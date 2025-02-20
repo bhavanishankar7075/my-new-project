@@ -1,0 +1,112 @@
+/* src/components/HomePage.css */
+
+/* Carousel Caption Styling */
+.carousel-caption {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+  }
+  
+  /* Section Headings */
+  h2.text-center {
+    margin-bottom: 30px;
+    font-weight: bold;
+    color: #333;
+  }
+
+  /* Make sure the carousel takes full width and is responsive */
+.home-carousel {
+  width: 100%;
+  max-height: 500px;
+  overflow: hidden;
+}
+
+/* Ensure the carousel images cover the container nicely */
+.home-carousel .d-block {
+  object-fit: cover;
+  height: 500px; /* Adjust height as needed */
+}
+
+/* Animation for the carousel captions */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.carousel-caption-animate {
+  animation: fadeInUp 1s ease-out;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .home-carousel .d-block {
+    height: 300px;
+  }
+  .carousel-caption-animate h3 {
+    font-size: 1.5rem;
+  }
+  .carousel-caption-animate p {
+    font-size: 1rem;
+  }
+}
+  
+  /* Card Styling for Premium Deals */
+  .premium-card {
+    border: none;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s;
+  }
+  .premium-card:hover {
+    transform: translateY(-5px);
+  }
+  .premium-card .card-img-top {
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  /* Card Styling for Product List */
+  .product-card {
+    border: none;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s;
+  }
+  .product-card:hover {
+    transform: translateY(-5px);
+  }
+  .product-card .card-img-top {
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .shop-button {
+    background-color: #e1a413; /* Primary color */
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .shop-button:hover,
+  .shop-button:focus {
+    background-color: #18cecb; /* Slightly darker on hover/focus */
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .shop-button:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  

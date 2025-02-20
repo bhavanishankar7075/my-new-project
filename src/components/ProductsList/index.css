@@ -1,0 +1,281 @@
+/* Global Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: #f4f6f8;
+}
+
+/* Carousel Section */
+.product-carousel img {
+  max-height: 400px;
+  object-fit: cover;
+  width: 100%;
+}
+
+/* Sort Options Styling */
+.sort-options {
+  margin: 20px auto;
+  text-align: center;
+  font-size: 16px;
+  padding: 10px 20px;
+  max-width: 300px;
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.sort-options label {
+  font-weight: 600;
+  margin-right: 8px;
+  color: #b11b1b;
+}
+
+.sort-options select {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+  font-size: 16px;
+  color: #d01f1f;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  outline: none;
+}
+
+.sort-options select:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+
+
+/* Section Headings */
+
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+h2.text-center {
+  color: #e90f0f; /* your chosen text color */
+  animation: fadeInUp 1s ease-out;
+}
+
+/* Product Card */
+.product-card {
+  border: none;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #fff;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.2);
+}
+
+.product-card .card-img-top {
+  height: 220px;
+  object-fit: cover;
+}
+
+/* Button Styles */
+.btn-success {
+  transition: transform 0.2s ease, background-color 0.3s ease, box-shadow 0.2s ease;
+}
+
+.btn-success:hover,
+.btn-success:focus {
+  background-color: #21db09;
+  border-color: #1e7e34;
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-success:active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 4px rgba(18, 106, 40, 0.866);
+}
+
+
+/* src/components/ProductsList.css */
+
+.add-to-cart-btn {
+  background-color: #28a745; /* Base green color */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.add-to-cart-btn:hover {
+  transform: scale(1.05);
+  background-color: #218838; /* Darker green on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.add-to-cart-btn:active {
+  transform: scale(0.95);
+  background-color: #1e7e34; /* Even darker when active */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+
+
+/* Adjust the top-right toast container */
+.toast-container {
+  position: fixed;
+  top:20px;
+  right: 20px;
+}
+
+
+
+
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .product-carousel img {
+    max-height: 250px;
+  
+  }
+} 
+
+
+
+
+
+
+
+
+
+
+
+/* Global Animation Classes */
+
+/* Fade In */
+.fade-in {
+  animation: fadeIn 1s ease both;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Slide In From Left */
+.slide-in-left {
+  animation: slideInLeft 1s ease both;
+}
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Slide In From Right */
+.slide-in-right {
+  animation: slideInRight 1s ease both;
+}
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Zoom In */
+.zoom-in {
+  animation: zoomIn 0.8s ease both;
+}
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Rotate In */
+.rotate-in {
+  animation: rotateIn 1s ease both;
+}
+@keyframes rotateIn {
+  from {
+    opacity: 0;
+    transform: rotate(-360deg);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(0deg);
+  }
+}
+
+/* Bounce In */
+.bounce-in {
+  animation: bounceIn 1s ease both;
+}
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Example: Navbar Logo Animation on small screens (using fadeInDown) */
+@media (max-width: 576px) {
+  .loggedout-navbar .navbar-brand {
+    animation: fadeInDown 1s ease both;
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
